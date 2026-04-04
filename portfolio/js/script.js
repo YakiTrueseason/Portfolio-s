@@ -1,8 +1,9 @@
 // ローディングから画面推移
+const loadingAreaGray = document.querySelector('#loading');
+const loadingAreablue = document.querySelector('#loading-screen');
+const loadingText = document.querySelector('#loading p');
+
 window.addEventListener('load',() => {
-    const loadingAreaGray = document.querySelector('#loading');
-    const loadingAreablue = document.querySelector('#loading-screen');
-    const loadingText = document.querySelector('#loading p');
 
     console.log(loadingAreaGray)
     //ローディング中（グレースクリーン）
@@ -50,3 +51,23 @@ window.addEventListener('load',() => {
     );
     
 });
+// 開閉ボタン
+const openMenuButton = document.getElementById('open');
+const closeMenuButton = document.getElementById('close');
+const sideMenu = document.getElementById('menu');
+
+openMenuButton.addEventListener('click',() =>{
+    
+sideMenu.classList.add('open');
+});
+
+closeMenuButton.addEventListener('click',() =>{
+    sideMenu.classList.remove('menu');
+});
+
+document.addEventListener('click',(event) =>{
+    if(!sideMenu.contains(event.target)&& !openMenuButton.contains(event.target)){
+        sideMenu.classList.remove('open');
+    }
+});
+
