@@ -74,11 +74,11 @@ h3 {
     width: 100px;
 }
 /* スライドメニューパネル */
-#menu-panel {
+/* #menu-panel {
     position: fixed;
     top: 0;
-    right: 5;
-    z-index: 0;
+    left: -100%;
+    z-index: 100;
     padding: 1rem 6rem 7rem;
     width: max(50%, 20rem);
     height: 50%;
@@ -86,10 +86,97 @@ h3 {
     transform: translateX(100%);
     font-family: var(--oswald-font);
     translate: 100vw;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+} */
+.menu-wrapper {
+position: relative;
 }
 
-.menu-list {
+.menu-icon {
+width: 40px;
+height: 30px;
+  position: fixed; /* ← fixedにして常に左上固定 */
+top: 20px;
+left: 20px;
+cursor: pointer;
+z-index: 3;
+display: inline-block;
+}
+
+.menu-icon span {
+display: block;
+height: 4px;
+margin: 6px 0;
+background: #333;
+border-radius: 2px;
+transition: 0.4s;
+}
+
+/* ハンバーガーがXに変形 */
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+transform: translateY(10px) rotate(45deg);
+}
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+opacity: 0;
+}
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+transform: translateY(-10px) rotate(-45deg);
+}
+
+/* オーバーレイ背景 */
+.overlay {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.5);
+opacity: 0;
+pointer-events: none;
+transition: 0.4s;
+z-index: 1;
+}
+
+#menu-toggle:checked ~ .overlay {
+opacity: 1;
+pointer-events: auto;
+}
+
+/* メニュー本体（左から出す） */
+.menu {
+position: fixed;
+top: 0;
+  left: -250px; /* ← 初期位置を左へ */
+width: 250px;
+height: 100%;
+background: #fff;
+box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+transition: left 0.4s ease;
+z-index: 2;
+}
+
+#menu-toggle:checked ~ .menu {
+  left: 0; /* ← 開いたときは左0へ */
+}
+
+.menu ul {
+list-style: none;
+padding: 60px 20px;
+}
+
+.menu li {
+margin: 20px 0;
+}
+
+.menu a {
+text-decoration: none;
+color: #333;
+font-size: 1.2rem;
+transition: color 0.3s;
+}
+
+.menu a:hover {
+color: #007bff;
+}
+
+/* .menu-list {
     list-style: none;
 }
 
@@ -103,7 +190,7 @@ h3 {
     font-size: 2rem;
     color: #eee;
     text-shadow: 1px 1px 2px rgba(49, 164, 203, 1);
-}
+} */
 
 .cover {
     background-size: contain;
