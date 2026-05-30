@@ -33,7 +33,11 @@ img {
 p {
     text-align: center;
     color: #eee;
-    text-shadow: 1px 1px 2px rgba(236, 65, 145, 1);
+    text-shadow: 1px 1px 5px rgba(236, 65, 145, 1);
+}
+
+h1{
+    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
@@ -42,7 +46,8 @@ h2 {
 }
 
 h3 {
-    text-shadow: 1px 1px 2px rgba(49, 164, 203, 1);
+    text-shadow: 1px 1px 5px rgb(10, 202, 228);
+    text-align: center;
 }
 
 /* レイアウト */
@@ -80,20 +85,6 @@ h3 {
     width: 100px;
 }
 /* スライドメニューパネル */
-/* #menu-panel {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    z-index: 100;
-    padding: 1rem 6rem 7rem;
-    width: max(50%, 20rem);
-    height: 50%;
-    background-color:rgba(255,255,255,0.5);
-    transform: translateX(100%);
-    font-family: var(--oswald-font);
-    translate: 100vw;
-    transition: transform 0.3s ease;
-} */
 .menu-wrapper {
 position: relative;
 }
@@ -101,7 +92,7 @@ position: relative;
 .menu-icon {
 width: 40px;
 height: 30px;
-  position: fixed; /* ← fixedにして常に左上固定 */
+position: fixed; /* ← fixedにして常に左上固定 */
 top: 20px;
 left: 20px;
 cursor: pointer;
@@ -113,7 +104,7 @@ display: inline-block;
 display: block;
 height: 4px;
 margin: 6px 0;
-background: #333;
+background: rgb(0, 102, 255);
 border-radius: 2px;
 transition: 0.4s;
 }
@@ -149,10 +140,10 @@ pointer-events: auto;
 .menu {
 position: fixed;
 top: 0;
-  left: -250px; /* ← 初期位置を左へ */
+left: -250px; /* ← 初期位置を左へ */
 width: 250px;
 height: 100%;
-background: #fff;
+background: linear-gradient(rgb(112, 198, 255),rgba(241, 131, 255, 0.486));
 box-shadow: 2px 0 8px rgba(0,0,0,0.2);
 transition: left 0.4s ease;
 z-index: 2;
@@ -173,8 +164,8 @@ margin: 20px 0;
 
 .menu a {
 text-decoration: none;
-color: #333;
-font-size: 1.2rem;
+color: rgba(236, 65, 145, 1);
+font-size: 2rem;
 transition: color 0.3s;
 }
 
@@ -182,30 +173,12 @@ transition: color 0.3s;
 color: #007bff;
 }
 
-/* .menu-list {
-    list-style: none;
-}
-
-.menu-list li {
-    margin: 1.5rem 0;
-    opacity: 0;
-}
-
-.menu-list a {
-    text-decoration: none;
-    font-size: 2rem;
-    color: #eee;
-    text-shadow: 1px 1px 2px rgba(49, 164, 203, 1);
-} */
-
 .cover {
     background-size: contain;
     background-position: center;
-    /* height: 500px; */
 }
 
 .cover-home {
-    /* background-color: aqua; */
     background-size: contain;
     background-repeat: repeat-y;
 }
@@ -302,11 +275,77 @@ color: #007bff;
 .item p {
     font-size: .875rem;
 }
+/* 棒グラフ ------------------------------------------- 
+*/
+.bar-graph{
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
 
-/* .item-big {
-    grid-column: 1/3;
-    grid-row: 1/3;
-} */
+.bar-graph .graph{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 0 4px 4px 0;
+    animation: graphAnim 3s forwards;
+}
+
+@keyframes graphAnim{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.graph span{
+    font-size:15px;
+    color: black;
+}
+
+#html-css{
+    background: rgb(255, 94, 94);
+    width: 60%;
+}
+
+#js{
+    background: rgb(255, 194, 80);
+    width: 50%;
+}
+
+#react{
+    background: rgb(255, 255, 91);
+    width: 45%;
+}
+
+#python{
+    background: #77ff77;
+    width: 45%;
+}
+
+#ts{
+    background: rgb(255, 123, 255);
+    width: 45%;
+}
+
+#php{
+    background: rgb(138, 222, 255);
+    width: 45%;
+}
+
+#mos{
+    background: rgb(255, 184, 255);
+    width: 80%;
+}
 
 /* フッター ーーーーーーーーーーーーーーーーーーーーーーーーーーー
 */

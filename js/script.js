@@ -5,8 +5,7 @@ const loadingText = document.querySelector('#loading p');
 
 window.addEventListener('load', () => {
 
-    console.log(loadingAreaGray)
-    //ローディング中（グレースクリーン）
+//ローディング中（グレースクリーン）
     loadingAreaGray.animate(
         {
             opacity: [1, 0],
@@ -19,7 +18,7 @@ window.addEventListener('load', () => {
             fill: 'forwards',
         }
     );
-    //ローディング中（アクア）
+//ローディング中（アクア）
     loadingAreablue.animate(
         {
             translate: ['0 100vh', '0 0', '0 -100vh']
@@ -31,7 +30,7 @@ window.addEventListener('load', () => {
             fill: 'forwards',
         }
     );
-    //ローディング中テキスト
+//ローディング中テキスト
     loadingText.animate(
         [
             {
