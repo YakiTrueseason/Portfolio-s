@@ -19,6 +19,9 @@ body {
     background: linear-gradient(180deg, rgba(49, 164, 203, 1), rgba(236, 65, 145, 1));
     margin: 0;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -42,12 +45,26 @@ h1{
 
 h2 {
     text-align: center;
-
+    text-shadow: 1px 1px 5px rgb(10, 202, 228);
 }
 
 h3 {
     text-shadow: 1px 1px 5px rgb(10, 202, 228);
+    /* text-align: center; */
+}
+
+ul{
+    /* padding-left: 0; */
+    margin: 0 auto;
+    /* width: fit-content; */
+    display: table;
+    padding: 0;
+}
+
+li{
+    /* list-style: none; */
     text-align: center;
+    /* display: inline; */
 }
 
 /* レイアウト */
@@ -207,8 +224,8 @@ color: #007bff;
 /* ボタン */
 .btn {
     display: inline-block;
-    font-size: 1.5rem;
-    background-color: pink;
+    font-size: 1rem;
+    background-color: rgba(248, 47, 204, 0.3);
     color: #ffffff;
     border-radius: 8px;
     padding: .75rem 1.5rem;
@@ -275,6 +292,40 @@ color: #007bff;
 .item p {
     font-size: .875rem;
 }
+
+/* モーダル */
+dialog{
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    /* 中央配置 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#slide{
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+.slide-buttons{
+    margin-top: 20px;
+}
+
+/* 背景　暗転 */
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* スキル-----------------------
+ */
+ul li .pasent{
+    list-style: none;
+    padding-left: 0%;
+}
 /* 棒グラフ ------------------------------------------- 
 */
 .bar-graph{
@@ -324,22 +375,22 @@ color: #007bff;
 
 #react{
     background: rgb(255, 255, 91);
-    width: 45%;
+    width: 50%;
 }
 
 #python{
     background: #77ff77;
-    width: 45%;
+    width: 50%;
 }
 
 #ts{
     background: rgb(255, 123, 255);
-    width: 45%;
+    width: 30%;
 }
 
 #php{
     background: rgb(138, 222, 255);
-    width: 45%;
+    width: 30%;
 }
 
 #mos{
@@ -379,11 +430,19 @@ color: #007bff;
     padding: 1rem 0;
 }
 
+.form{
+    text-align: center;
+}
+.form input{
+    text-align: center;
+}
+
 .copyright {
     background-color: #432;
     text-align: center;
     padding: 2rem;
     color: #ffffff;
+    margin-top: auto;
 }
 
 /* デスクトップ 版----------------------

@@ -19,6 +19,7 @@
 </head>
 
 <body>
+<!-- ローディング画面 -->
     <div id="loading">
         <p>Loading</p>
         <div id="loading-screen"></div>
@@ -54,33 +55,56 @@
         </div>
         <main class="wrapper grid">
             <h2>手掛けたもの</h2><br>
+
             <div class="item item-big">
-                <iframe src="https://myportfolio-seven-omega-49.vercel.app"width="400"height="500" referrerpolicy="same-origin" sandbox="allow-scripts" frameborder="0">
-                </iframe>
-                <p>NisshoCode <br>My Portfolio Website</p>
-                <p><a href="https://myportfolio-seven-omega-49.vercel.app/">詳細はこちらをクリック</a></p>
+                <!-- <button id="showDialog">開く</button> -->
+                
+                    <button class="open-modal" data-project="board"><h3>掲示板API</h3></button><br>
+                    <p><a href="https://board-api-three.vercel.app/">詳細はこちらをクリック</a></p>
+
+                    <button class="open-modal" data-project="gurume"><h3>リアルなグルメ紹介　LP</h3></button><br>
+                <p><a href="https://landing-page-nisshocode.vercel.app/">詳細はこちらをクリック</a></p>
+
+                    <button class="open-modal" data-project="memo"><h3>予定管理アプリ</h3></button><br>
+                <p><a href="https://memo-app-nu-smoky.vercel.app/">詳細はこちらをクリック</a></p>
+
+                    <dialog id="modal"> 
+                    <h2 id="projectTitle"></h2>
+                    <img id="slide"  alt="">
+                    <div>
+                        <button id="prev">前へ</button>
+                        <button id="next">次へ</button>
+                    </div>
+                    <button id="closeDialog">閉じる</button>
+                </dialog>
             </div>
-            <div class="item">
-                <iframe src="https://portfolio-s-three.vercel.app/"width="400"height="500" referrerpolicy="same-origin" sandbox="allow-scripts" frameborder="0">
-                </iframe>
-                <p>Portfolio-s</p>
+                <!-- <iframe src="https://myportfolio-seven-omega-49.vercel.app"width="400"height="500" referrerpolicy="same-origin" sandbox="allow-scripts" frameborder="0">
+                </iframe> -->
+                <!-- <p>NisshoCode <br>My Portfolio Website</p>
+                <p><a href="https://myportfolio-seven-omega-49.vercel.app/">詳細はこちらをクリック</a></p> -->
+            <!-- </div>
+            <div class="item"> -->
+                <!-- <iframe src="https://portfolio-s-three.vercel.app/"width="400"height="500" referrerpolicy="same-origin" sandbox="allow-scripts" frameborder="0">
+                </iframe> -->
+                <!-- <p>Portfolio-s</p>
                 <p><a href="https://portfolio-s-three.vercel.app/">詳細はこちらをクリック</a></p>
             </div>
-            <div class="item">
-                <iframe src="https://landing-page-nisshocode.vercel.app/"width="400"height="500" referrerpolicy="same-origin" sandbox="allow-scripts" frameborder="0">
-                </iframe>
-                <p>リアルなグルメ紹介　LP</p>
+            <div class="item"> -->
+                <!-- <iframe src="https://landing-page-nisshocode.vercel.app/"width="400"height="500" referrerpolicy="same-origin" sandbox="allow-scripts" frameborder="0">
+                </iframe> -->
+                <!-- <p>リアルなグルメ紹介　LP</p>
                 <p><a href="https://landing-page-nisshocode.vercel.app/">詳細はこちらをクリック</a></p>
             </div>
             <div class="item">
                 <img src="./material/illustration/無題188_20260322122908.png" alt="">
                 <p>asa</p>
-            </div>
+            </div> -->
         </main>
 
 <!-- コピーライト -->
         <footer class="page-footer">
     </div>
+</div>
     <div class="copyright">
         <small>&copy; 2026 TreeSeason Portfolio</small>
     </div>
