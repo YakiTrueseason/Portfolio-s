@@ -34,7 +34,6 @@ img {
 }
 
 p {
-    text-align: center;
     color: #eee;
     text-shadow: 1px 1px 5px rgba(236, 65, 145, 1);
 }
@@ -50,22 +49,14 @@ h2 {
 
 h3 {
     text-shadow: 1px 1px 5px rgb(10, 202, 228);
-    /* text-align: center; */
 }
 
 ul{
-    /* padding-left: 0; */
     margin: 0 auto;
-    /* width: fit-content; */
     display: table;
     padding: 0;
 }
 
-li{
-    /* list-style: none; */
-    text-align: center;
-    /* display: inline; */
-}
 
 /* レイアウト */
 
@@ -322,9 +313,21 @@ dialog::backdrop{
 
 /* スキル-----------------------
  */
-ul li .pasent{
-    list-style: none;
-    padding-left: 0%;
+.pasent{
+    text-align: left;
+    padding-left: 20px;
+}
+.pasent li{
+    margin-bottom: 8px;
+}
+
+.reference{
+    display: inline-block;
+    text-align: left;
+}
+
+.reference p{
+    margin: 8px 0;
 }
 /* 棒グラフ ------------------------------------------- 
 */
@@ -401,10 +404,9 @@ ul li .pasent{
 /* フッター ーーーーーーーーーーーーーーーーーーーーーーーーーーー
 */
 .page-footer {
-    /* background-color: darkgrey; */
-    background-size: cover;
-    background-position: center;
-    padding-top: 12rem;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 5rem;
 }
 
 .info {
