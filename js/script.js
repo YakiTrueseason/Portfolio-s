@@ -105,7 +105,7 @@ document.querySelectorAll(".open-modal").forEach(button =>{
     });
 });
 
-// //開く
+//開く
 // showButton.addEventListener("click",()=>{
 //     modal.showModal();
 // });
