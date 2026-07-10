@@ -48,7 +48,26 @@ window.addEventListener('load', () => {
             fill: 'forwards',
         }
     );
+});
 
+//背景
+const backgrounds = document.querySelectorAll(".bg-top");
+
+window.addEventListener("scroll",()=>{
+
+    const limit = window.innerWidth < 1500 ? 1000 : 500;
+
+    let opacity = 1 -window.scrollY /limit;
+
+    opacity = Math.max(opacity,0);
+
+    backgrounds.forEach(bg =>{
+        bg.style.opacity = opacity;
+    });
+
+    backgrounds.forEach(bg =>{
+        bg.classList.toggle("fixed",window.scrollY < limit);
+    });
 });
 
 // モーダル
@@ -87,10 +106,14 @@ const projects = {
     "./material/screenshot/スクリーンショット 2026-06-03 164140.png",
     "./material/screenshot/スクリーンショット 2026-06-03 164207.png",
     "./material/screenshot/スクリーンショット 2026-06-03 164228.png"
-        ]
+        ],
+        description:
+        "Todo、メモ・カレンダーをまとめた管理アプリ",
+        link:
+        "https://todo-memo-mu.vercel.app/"
     }
 }
-// let currentProject = null;
+
 let current = 0;
 
 document.querySelectorAll(".open-modal").forEach(button =>{
@@ -105,10 +128,6 @@ document.querySelectorAll(".open-modal").forEach(button =>{
     });
 });
 
-//開く
-// showButton.addEventListener("click",()=>{
-//     modal.showModal();
-// });
 //閉じる
 closeButton.addEventListener("click",()=>{
     modal.close();
