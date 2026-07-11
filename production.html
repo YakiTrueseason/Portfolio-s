@@ -59,36 +59,42 @@
             <div class="item">
                     <img src="" alt="掲示板API">
                     <h3>掲示板API</h3>
-                    <p>掲示板API</p>
-                    <button class="open-modal" data-project="board"><h3>スクリーンショットを見る</h3></button><br>
-                    <p><a href="https://board-api-three.vercel.app/">アプリを見る</a></p>
+                    <button class="open-modal" data-project="board">詳細を見る</button><br>
             </div>
             <div class="item">
                     <img src="" alt="リアルなグルメ紹介　LP">
                     <h3>リアルなグルメ紹介　LP</h3>
-                    <p>gurume</p>
-                    <button class="open-modal" data-project="gurume"><h3>スクリーンショットを見る</h3></button><br>
-                    <p>
-                        <a href="https://landing-page-nisshocode.vercel.app/">アプリを見る</a>
-                    </p>
+                    <button class="open-modal" data-project="gurume">詳細を見る</button><br>
             </div>
             <div class="item">
                     <img src="./material/screenshot/スクリーンショット 2026-07-05 232632.png" alt="予定管理アプリのホーム画面">
                     <h3>予定管理アプリ</h3>
-                    <p>Todo、メモ・カレンダーをまとめた管理アプリ</p>
-                    <button class="open-modal" data-project="memo">スクリーンショットを見る</button><br>
-                    <p>
-                        <a href="https://todo-memo-mu.vercel.app/">アプリを見る</a>
-                    </p>
+                    <button class="open-modal" data-project="memo">詳細を見る</button><br>
             </div>
                     <dialog id="modal"> 
                     <h2 id="projectTitle"></h2>
-                    <img id="slide"  alt="">
-                    <p id="description"></p>
+                    <h2 id="modal-title"></h2>
+                    <div class="gallery">
+                        <div class="main-image"><img id="slide"  alt="スクリーンショット"></div>
+                        <div class="thumbnail-list" id="thumbnail-list"></div>
+                    </div>
                     <div>
                         <button id="prev">前へ</button>
                         <button id="next">次へ</button>
                     </div>
+                    <h3>説明</h3>
+                    <p id="modal-description"></p><br>
+                    <div class="modal-info">
+                        <div class="modal-box">
+                            <h3>主な機能</h3>
+                            <ul id="modal-function"></ul>
+                        </div>
+                        <div class="modal-box">
+                            <h3>使用技術</h3>
+                            <ul id="modal-technology"></ul>
+                        </div>
+                    </div>
+                    <a id="modal-link" href="#" target="_blank">アプリを見る</a>
                     <button id="closeDialog">閉じる</button>
                 </dialog>
             </div>

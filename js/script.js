@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
             fill: 'forwards',
         }
     );
-//ローディング中（アクア）
+    //ローディング中（アクア）
     loadingAreablue.animate(
         {
             translate: ['0 100vh', '0 0', '0 -100vh']
@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
             fill: 'forwards',
         }
     );
-//ローディング中テキスト
+    //ローディング中テキスト
     loadingText.animate(
         [
             {
@@ -50,7 +50,7 @@ window.addEventListener('load', () => {
     );
 });
 
-//背景
+    //背景
 const backgrounds = document.querySelectorAll(".bg-top");
 
 window.addEventListener("scroll",()=>{
@@ -70,8 +70,7 @@ window.addEventListener("scroll",()=>{
     });
 });
 
-// モーダル
-// const dialog = document.querySelector("dialog");
+    // モーダル
 const modal = document.getElementById("modal");
 const showButton = document.getElementById("showDialog");
 const closeButton = document.getElementById("closeDialog");
@@ -80,6 +79,11 @@ const slide = document.getElementById("slide");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 
+const functionList = document.getElementById("modal-function");
+const technologyList = document.getElementById("modal-technology");
+const thumbnailList = document.getElementById("thumbnail-list");
+
+    // 実際の内容
 const projects = {
     board:{
         title:"掲示板API",
@@ -88,7 +92,25 @@ const projects = {
     "./material/screenshot/スクリーンショット 2026-06-03 153206.png",
     "./material/screenshot/スクリーンショット 2026-06-03 153332.png",
     "./material/screenshot/スクリーンショット 2026-06-03 153400.png"
-]
+    ],
+        description:
+        "Todo、メモ・カレンダーをまとめた管理アプリ",
+        link:
+        "https://todo-memo-mu.vercel.app/",
+        functions:[
+            "Todo",
+            "memo",
+            "cale",
+            "yuusen"
+        ],
+        technology:[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "FastAPI",
+            "SQLite"
+        ],
     },
     gurume:{
         title:"リアルなグルメ紹介",
@@ -97,7 +119,25 @@ const projects = {
     "./material/screenshot/スクリーンショット 2026-06-03 163948.png",
     "./material/screenshot/スクリーンショット 2026-06-03 164003.png",
     "./material/screenshot/スクリーンショット 2026-06-03 164015.png"
-        ]
+        ],
+        description:
+        "Todo、メモ・カレンダーをまとめた管理アプリ",
+        link:
+        "https://todo-memo-mu.vercel.app/",
+        functions:[
+            "Todo",
+            "memo",
+            "cale",
+            "yuusen"
+        ],
+        technology:[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "FastAPI",
+            "SQLite"
+        ],
     },
     memo:{
         title:"予定管理アプリ",
@@ -110,20 +150,74 @@ const projects = {
         description:
         "Todo、メモ・カレンダーをまとめた管理アプリ",
         link:
-        "https://todo-memo-mu.vercel.app/"
+        "https://todo-memo-mu.vercel.app/",
+        functions:[
+            "Todo",
+            "memo",
+            "cale",
+            "yuusen"
+        ],
+        technology:[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "FastAPI",
+            "SQLite"
+        ],
     }
 }
 
 let current = 0;
-
+    // スクリーンショットの変更
+function updateActiveThumbnail(){
+    const thumbnails = document.querySelectorAll("#thumbnail-list img");
+    thumbnails.forEach((img,index)=>{
+        img.classList.toggle("active",index === current);
+    });
+}
+    // モーダル内の内容
 document.querySelectorAll(".open-modal").forEach(button =>{
     button.addEventListener("click",()=>{
         const projectKey = button.dataset.project;
         currentProject = projects[projectKey];
         current = 0;
+    // タイトル
         document.getElementById("projectTitle").textContent =
         currentProject.title;
+    // スクリーンショット
+        thumbnailList.innerHTML = "";
+        currentProject.images.forEach((images,index)=>{
+            const img = document.createElement("img");
+            img.src = images;
+    // 最初の画像を選択肢に
+            img.addEventListener("click",()=>{
+                current = index;
+                slide.src = images;
+                updateActiveThumbnail();
+            });
+            thumbnailList.appendChild(img);
+        })
+    // 説明
+        document.getElementById("modal-description").textContent = currentProject.description;
+    // リンク
+        document.getElementById("modal-link").href = currentProject.link;
+    // 主な機能
+        functionList.innerHTML = "";
+        currentProject.functions.forEach(item =>{
+            const li = document.createElement("li");
+            li.textContent = item;
+            functionList.appendChild(li);
+        })
+    // 使用技術
+        technologyList.innerHTML = "";
+        currentProject.technology.forEach(item =>{
+            const li = document.createElement("li");
+            li.textContent = item;
+            technologyList.appendChild(li);
+        })
         slide.src = currentProject.images[current];
+        updateActiveThumbnail();
         modal.showModal();
     });
 });
@@ -140,6 +234,7 @@ next.addEventListener("click",()=>{
         current = 0;
     }
     slide.src = currentProject.images[current];
+    updateActiveThumbnail();
 });
 //前へ
 prev.addEventListener("click",()=>{
@@ -148,5 +243,6 @@ prev.addEventListener("click",()=>{
         current = currentProject.images.length - 1;
     }
     slide.src = currentProject.images[current];
+    updateActiveThumbnail();
 });
 
