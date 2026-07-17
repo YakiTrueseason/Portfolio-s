@@ -52,24 +52,21 @@
                 </nav>
             </div>
             </header>
-            <h2 class="page-title font-english">Production-制作物</h2><br>
+            <h1 class="page-title font-english">Production-制作物</h1><br>
         </div>
             <h2>手掛けたもの</h2><br>
         <main class="wrapper grid">
-            <div class="item">
-                    <img src="" alt="掲示板API">
+            <div class="item open-modal" data-project="board">
+                    <img class="main-screen" src="./material/screenshot/スクリーンショット 2026-07-17 104929.png" alt="掲示板API">
                     <h3>掲示板API</h3>
-                    <button class="open-modal" data-project="board">詳細を見る</button><br>
             </div>
-            <div class="item">
-                    <img src="" alt="リアルなグルメ紹介　LP">
+            <div class="item open-modal" data-project="gurume">
+                    <img class="main-screen" src="./material/screenshot/スクリーンショット 2026-07-16 135440.png" alt="リアルなグルメ紹介　LP">
                     <h3>リアルなグルメ紹介　LP</h3>
-                    <button class="open-modal" data-project="gurume">詳細を見る</button><br>
             </div>
-            <div class="item">
-                    <img src="./material/screenshot/スクリーンショット 2026-07-05 232632.png" alt="予定管理アプリのホーム画面">
+            <div class="item open-modal" data-project="memo">
+                    <img class="main-screen" src="./material/screenshot/スクリーンショット 2026-07-17 105334.png" alt="予定管理アプリのホーム画面">
                     <h3>予定管理アプリ</h3>
-                    <button class="open-modal" data-project="memo">詳細を見る</button><br>
             </div>
                     <dialog id="modal"> 
                     <h2 id="projectTitle"></h2>
@@ -78,12 +75,12 @@
                         <div class="main-image"><img id="slide"  alt="スクリーンショット"></div>
                         <div class="thumbnail-list" id="thumbnail-list"></div>
                     </div>
-                    <div>
+                    <div class="prevnext">
                         <button id="prev">前へ</button>
                         <button id="next">次へ</button>
                     </div>
                     <h3>説明</h3>
-                    <p id="modal-description"></p><br>
+                    <p class="modal-description" id="modal-description"></p><br>
                     <div class="modal-info">
                         <div class="modal-box">
                             <h3>主な機能</h3>
@@ -94,8 +91,8 @@
                             <ul id="modal-technology"></ul>
                         </div>
                     </div>
-                    <a id="modal-link" href="#" target="_blank">アプリを見る</a>
-                    <button id="closeDialog">閉じる</button>
+                    <a class="modal-link" id="modal-link" href="#" target="_blank">アプリを見る</a>
+                    <button class="closeDialog" id="closeDialog">閉じる</button>
                 </dialog>
             </div>
         </main>
