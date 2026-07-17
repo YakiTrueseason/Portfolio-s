@@ -46,7 +46,7 @@ h1{
 
 h2 {
     text-align: center;
-    text-shadow: 1px 1px 5px rgb(228, 10, 199);
+    text-shadow: 1px 1px 5px rgb(180, 12, 231);
 }
 
 h3 {
@@ -365,6 +365,18 @@ dialog{
     border-radius: 20px;
 }
 /* スクリーンショット */
+.main-screen{
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    filter:drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5)) ;
+    object-fit: contain !important
+}
+
+
 #slide{
     width: 500px;
     max-height: 70vh;
@@ -410,7 +422,7 @@ dialog{
 }
 
 #thumbnail-list img.active{
-    border: 5px solid #77ff77;
+    border: 5px solid #00f7ff;
     box-shadow: 0 0 10px rgba(15, 219, 233, 0.452);
 }
 /* 主な機能　使用技術 */
@@ -432,6 +444,72 @@ dialog{
 /* 背景　暗転 */
 dialog::backdrop{
     background-color: rgba(0, 0, 0, 0.5);
+}
+/* 前へ次へ */
+.prevnext{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 1rem auto;
+}
+.prevnext button{
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1rem;
+}
+.prevnext button:hover{
+    background: #0bd;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.prevnext button:active{
+    transform: translateY(0);
+}
+
+/* 説明 */
+.modal-description{
+    color: black;
+    background-color: #ffffff;
+    text-shadow: none;
+}
+
+/* 閉じる */
+.closeDialog{
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1rem;
+}
+.closeDialog:hover{
+    background: #0bd;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* アプリを見る */
+.modal-link{
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1rem;
+}
+.modal-link:hover{
+    background: #0bd;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* スキル-----------------------
@@ -662,8 +740,9 @@ dialog::backdrop{
 /* Production */
     .grid {
         display: grid;
-        gap: 3rem 2rem;
-        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem ;
+        grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+        justify-items: center;
         text-align: center;
     }
 

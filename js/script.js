@@ -88,81 +88,82 @@ const projects = {
     board:{
         title:"掲示板API",
         images : [
-    "./material/screenshot/スクリーンショット 2026-06-03 152946.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 153206.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 153332.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 153400.png"
+    "./material/screenshot/スクリーンショット 2026-07-17 104946.png",
+    "./material/screenshot/スクリーンショット 2026-07-17 104954.png"
     ],
         description:
-        "Todo、メモ・カレンダーをまとめた管理アプリ",
+        "ReactとFastAPIを用いて作成した掲示板アプリです。",
         link:
-        "https://todo-memo-mu.vercel.app/",
+        "https://board-api-three.vercel.app/",
         functions:[
-            "Todo",
-            "memo",
-            "cale",
-            "yuusen"
+        "投稿一覧",
+        "投稿作成",
+        "投稿編集",
+        "ログイン",
+        "新規登録",
         ],
         technology:[
-            "HTML",
-            "CSS",
-            "JavaScript",
             "React",
+            "React Router",
+            "Tailwind CSS",
             "FastAPI",
+            "SQLAlchemy",
             "SQLite"
         ],
     },
     gurume:{
         title:"リアルなグルメ紹介",
         images : [
-    "./material/screenshot/スクリーンショット 2026-06-03 163853.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 163948.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 164003.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 164015.png"
+    "./material/screenshot/スクリーンショット 2026-07-16 135434.png",
+    "./material/screenshot/スクリーンショット 2026-07-17 105058.png",
+    "./material/screenshot/スクリーンショット 2026-07-17 105127.png",
+    "./material/screenshot/スクリーンショット 2026-07-17 105142.png",
+    "./material/screenshot/スクリーンショット 2026-07-17 105305.png"
         ],
         description:
-        "Todo、メモ・カレンダーをまとめた管理アプリ",
+        "実際に訪れた飲食店を紹介するランディングページです。",
         link:
-        "https://todo-memo-mu.vercel.app/",
+        "https://landing-page-nisshocode.vercel.app/",
         functions:[
-            "Todo",
-            "memo",
-            "cale",
-            "yuusen"
+            "店舗紹介",
+            "店舗写真の表示",
+            "店舗情報の掲載",
+            "レスポンシブ対応"
         ],
         technology:[
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React",
-            "FastAPI",
-            "SQLite"
+            "HTML5",
+            "CSS3",
+            "JavaScript"
         ],
     },
     memo:{
         title:"予定管理アプリ",
         images : [
-    "./material/screenshot/スクリーンショット 2026-06-03 164127.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 164140.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 164207.png",
-    "./material/screenshot/スクリーンショット 2026-06-03 164228.png"
+    "./material/screenshot/スクリーンショット 2026-07-12 234235.png",
+    "./material/screenshot/スクリーンショット 2026-07-17 105428.png",
+    "./material/screenshot/スクリーンショット 2026-07-17 105828.png"
         ],
         description:
-        "Todo、メモ・カレンダーをまとめた管理アプリ",
+        "Todo管理とメモ管理・カレンダー表示を1つにまとめたwebアプリです。",
         link:
         "https://todo-memo-mu.vercel.app/",
         functions:[
-            "Todo",
-            "memo",
-            "cale",
-            "yuusen"
+            "タスク",
+            "完了チェック",
+            "優先度設定",
+            "タグ設定",
+            "メモ管理",
+            "カレンダー",
+            "ダッシュボード"
         ],
         technology:[
-            "HTML",
-            "CSS",
-            "JavaScript",
             "React",
-            "FastAPI",
+            "React Router",
+            "React Context API",
+            "JavaScript(ES6+)",
+            "CSS3",
+            "Node.js",
+            "Express",
             "SQLite"
         ],
     }
