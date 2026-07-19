@@ -38,6 +38,7 @@ p {
     text-shadow: 1px 1px 5px rgba(236, 65, 145, 1);
     background-color: rgba(122, 89, 148, 0.2);
     display: inline-block;
+    border-radius: 20px;
 }
 
 h1{
@@ -517,6 +518,10 @@ dialog::backdrop{
 .pasent{
     text-align: left;
     padding-left: 20px;
+    background: rgba(112, 169, 194, 0.2);
+    border-radius: 20px;
+    padding: 10px 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .pasent li{
     margin-bottom: 8px;
@@ -525,10 +530,18 @@ dialog::backdrop{
 .reference{
     display: inline-block;
     text-align: left;
+    background: rgba(197, 117, 212, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 20px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
 }
 
 .reference p{
     margin: 8px 0;
+    margin: 10px 0;
+    text-align: center;
 }
 /* 棒グラフ ------------------------------------------- 
 */
